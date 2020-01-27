@@ -6,3 +6,5 @@ github.com/scgolang/midi v0.3.0 h1:2258AyQqqh1Hl5WZFR990JC1kbifrgOW6Vdq6KJWpOw=
 github.com/scgolang/midi v0.3.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=
 github.com/scgolang/midi v0.4.0 h1:iWujoIxL1oaAiP4bv363qXLK0IOcWySBxaiWiJxCAi8=
 github.com/scgolang/midi v0.4.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=
+github.com/scgolang/midi v0.5.0 h1:HsSMHIbgCAZlmjloOgRZeLQgBXi8eWXw3FZJzm3eEkE=
+github.com/scgolang/midi v0.5.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=
