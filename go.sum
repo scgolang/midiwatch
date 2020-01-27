@@ -1,0 +1,8 @@
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/scgolang/midi v0.2.0 h1:grw0Jg8fqpANwwy+cbDA2Otc7RjUBcCn2rulerr9BRU=
+github.com/scgolang/midi v0.2.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=
+github.com/scgolang/midi v0.3.0 h1:2258AyQqqh1Hl5WZFR990JC1kbifrgOW6Vdq6KJWpOw=
+github.com/scgolang/midi v0.3.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=
+github.com/scgolang/midi v0.4.0 h1:iWujoIxL1oaAiP4bv363qXLK0IOcWySBxaiWiJxCAi8=
+github.com/scgolang/midi v0.4.0/go.mod h1:ur2Ay6ad9oWPNFuGq4oQ6u75uZIjZfDdhozbGHnTcfQ=

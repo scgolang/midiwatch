@@ -12,11 +12,17 @@ import (
 
 func main() {
 	var (
+		list bool
 		name string
 	)
+	flag.BoolVar(&list, "l", false, "List MIDI devices.")
 	flag.StringVar(&name, "d", "", "MIDI device name prefix.")
 	flag.Parse()
 
+	if list {
+		Die(listDevices())
+		return
+	}
 	fmt.Println("Finding device...")
 	device, err := findDevice(name)
 	if err != nil {
@@ -24,19 +30,21 @@ func main() {
 	}
 	fmt.Println("Found device.")
 
-	pkts, err := device.Packets()
+	pktslice, err := device.Packets()
 	if err != nil {
 		Die(err)
 	}
 	fmt.Println("Waiting for MIDI packets...")
 
 	var i int
-	for pkt := range pkts {
-		if pkt.Err != nil {
-			Die(pkt.Err)
+	for pkts := range pktslice {
+		for _, pkt := range pkts {
+			if pkt.Err != nil {
+				Die(pkt.Err)
+			}
+			fmt.Printf("%-16d%#v\n", i, pkt.Data)
+			i++
 		}
-		fmt.Printf("%-16d%#v\n", i, pkt.Data)
-		i++
 	}
 }
 
@@ -63,4 +71,16 @@ func findDevice(prefix string) (*midi.Device, error) {
 		return nil, errors.New("could not find device with prefix " + prefix)
 	}
 	return d, errors.Wrap(d.Open(), "opening device "+d.Name)
+}
+
+func listDevices() error {
+	devices, err := midi.Devices()
+	if err != nil {
+		return errors.Wrap(err, "getting devices list")
+	}
+	fmt.Printf("ID: (TYPE) NAME\n")
+	for _, d := range devices {
+		fmt.Printf("%s: (%s) \"%s\"\n", d.ID, d.Type, d.Name)
+	}
+	return nil
 }
